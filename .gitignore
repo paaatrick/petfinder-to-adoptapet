@@ -1,0 +1,6 @@
+.idea
+__pycache__
+
+settings.ini
+upload
+venv
