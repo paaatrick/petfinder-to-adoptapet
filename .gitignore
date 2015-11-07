@@ -2,5 +2,6 @@
 __pycache__
 
 settings.ini
-upload
+upload/photos
+upload/pets.csv
 venv
