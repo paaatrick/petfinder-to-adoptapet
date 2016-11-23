@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import configparser
 import csv
 import datetime
@@ -79,5 +81,8 @@ if __name__ == "__main__":
             if file_name in uploaded_photos:
                 continue
             print(file_name)
-            with open(os.path.join(photos_dir, file_name), "rb") as file:
-                ftp.storbinary("STOR " + file_name, file)
+            try:
+                with open(os.path.join(photos_dir, file_name), "rb") as file:
+                    ftp.storbinary("STOR " + file_name, file)
+            except FileNotFoundError:
+                print("couldn't find file!")
